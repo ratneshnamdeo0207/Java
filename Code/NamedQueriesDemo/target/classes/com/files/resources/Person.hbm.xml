@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+	<class name="com.files.entity1.Person1" table="person">
+		<id name="pid">
+			<generator class="native"/>
+		</id>
+		<property name="pname" column="person_name" not-null="true"/>
+		<property name="age"/>
+		
+		<query name="findByPname">
+			<![CDATA[from Person1 p where pname=:name]]>
+		</query>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,26 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.files.entity.Customer" table="Customer">
+		<id name="customerid">
+		<generator class="increment"></generator>
+		</id>
+		
+		<property name="cname" column="customer_name"/>
+		<property name="phone"/>
+		<property name="price"/>
+		
+		<union-subclass name="com.files.entity.OfflineReader" table="offlineUser">
+			<property name="address"/>
+			<property name="newsboy"/>
+		</union-subclass>
+		<union-subclass name ="com.files.entity.OnlineReader" table="onlineuser">
+			<property name="emailid"/>
+		</union-subclass>
+		
+	</class>
+    
+
+</hibernate-mapping>

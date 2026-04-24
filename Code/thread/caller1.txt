@@ -1,0 +1,17 @@
+package threaddemo;
+
+public class caller1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		functiondemo fd1 = new functiondemo();
+		Mythread mt1 = new Mythread(5, fd1, "Th1");
+		Mythread mt2 = new Mythread(8, fd1, "Th2");
+		Mythread mt3 = new Mythread(10, fd1, "Th3");
+		mt1.start();
+		mt2.start();
+		mt3.start();
+	}
+
+}
+
