@@ -1,0 +1,4 @@
+
+public class IPA2 {
+
+}
