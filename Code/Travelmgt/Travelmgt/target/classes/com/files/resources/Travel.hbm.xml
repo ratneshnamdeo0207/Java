@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+<class name="com.files.entity.TravelInformation" table="traveldetails"> 
+	<id name="travelid" column="travelid">
+	<generator class="increment"/>
+	</id>
+	<property name="customername"  />
+	<property name="packageprice"/>
+	
+	<joined-subclass name="com.files.entity.MountainDestination" table="MountainDestination">
+	<key column="travelid"></key>
+	<property name="activities"/>
+	<property name="roomtype"/>
+	</joined-subclass>
+	
+	
+	<joined-subclass name="com.files.entity.BeachDestination" table="BeachDestination">
+	<key column="travelid"></key>
+	<property name="sporttype"/>
+	<property name="cruisetype"/>
+	</joined-subclass>
+	
+
+</class>
+</hibernate-mapping>

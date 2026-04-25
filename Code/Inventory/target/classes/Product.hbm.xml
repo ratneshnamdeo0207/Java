@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+<class name="com.files.tph.entity.product" table="productdetails" discriminator-value="product"> 
+	<id name="pid">
+	<generator class="increment"/>
+	</id>
+	<discriminator column="pd" type="string"></discriminator>
+	
+	<property name="pname"  />
+	<property name="cprice"/>
+	
+	<subclass name="com.files.tph.entity.productsales" discriminator-value="psales">
+	<property name="tsales"/>
+	<property name="sp"/>
+	
+	</subclass>
+	<subclass name = "com.files.tph.entity.productvendor" discriminator-value="pvendor">
+	<property name="vid"/>
+	<property name="vname"/>
+	<property name="phone"/>	
+	</subclass>
+	
+</class>
+</hibernate-mapping>
